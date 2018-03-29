@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  app:
+    image: sampleSpringRest:latest
+    ports:
+      - "5000:8080"

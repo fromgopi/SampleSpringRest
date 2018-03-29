@@ -37,3 +37,8 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-rest'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
+
+
+jar{
+    archiveName = "SampleSpringRest.jar"
+}
