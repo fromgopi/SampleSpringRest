@@ -2,6 +2,6 @@ version: '2'
 
 services:
   app:
-    image: sampleSpringRest:latest
+    image: sample_spring_rest:latest
     ports:
       - "5000:8080"
