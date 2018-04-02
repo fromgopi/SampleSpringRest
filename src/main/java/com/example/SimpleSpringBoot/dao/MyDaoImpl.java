@@ -21,7 +21,7 @@ public class MyDaoImpl {
     private JdbcTemplate jdbcTemplate;
 
     public List<Names> getAllNames(){
-        String sql = "select first_name, last_name from sampleDb.test";
+        String sql = "select first_name, last_name from test";
         return jdbcTemplate.query(sql, new RowMapper<Names>() {
             @Override
             public Names mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -31,7 +31,8 @@ public class MyDaoImpl {
     }
 
     public List<Names> queryByFirstName(String firstName){
-        String sql = "select first_name, last_name from sampleDb.test where first_name = ?";
+        String sql = "select first_name, last_name from test where first_name = ?";
+
         return jdbcTemplate.query(sql, new Object[]{firstName}, new RowMapper<Names>() {
             @Override
             public Names mapRow(ResultSet rs, int rowNum) throws SQLException {
