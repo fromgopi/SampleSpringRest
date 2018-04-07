@@ -1,5 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mysql://handbook-test-rds-amazonaws.ctm1jcf427vb.us-east-1.rds.amazonaws.com:3306/handbook_crm
-    username: hb_user
-    password: p4WOBTdPQ3UjcixHyF

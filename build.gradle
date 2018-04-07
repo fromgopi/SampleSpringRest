@@ -31,6 +31,7 @@ configurations.all{
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc')
+    compile('org.springframework.boot:spring-boot-starter-data-mongodb')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.6.1'
     compile("org.springframework.boot:spring-boot-starter-thymeleaf")
