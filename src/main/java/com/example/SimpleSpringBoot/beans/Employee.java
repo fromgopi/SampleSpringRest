@@ -14,7 +14,6 @@ public class Employee {
     private String lastName;
     private String description;
 
-
     public Employee() {
     }
 
