@@ -1,24 +1,35 @@
 package com.example.SimpleSpringBoot.beans;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "employee")
+@Document
 public class Employee {
 
     @Id
-    private long id;
+    private ObjectId _id;
+    private String title;
     private String firstName;
     private String lastName;
     private String description;
 
-
-    public long getId() {
-        return id;
+    public Employee() {
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Employee(String title, String firstName, String lastName, String description) {
+        this.title = title;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.description = description;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getFirstName() {
