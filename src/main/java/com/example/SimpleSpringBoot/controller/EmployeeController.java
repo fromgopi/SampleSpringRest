@@ -3,8 +3,7 @@ package com.example.SimpleSpringBoot.controller;
 import com.example.SimpleSpringBoot.beans.Employee;
 import com.example.SimpleSpringBoot.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -15,10 +14,14 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository emp;
 
-    @RequestMapping("/employee")
+
+
+    @RequestMapping("/employees")
     public List<Employee> getAll(){
+        System.out.println("================ Inside Employee Controller. ==========================");
         return emp.findAll();
     }
+
 
     @RequestMapping("/employee/{name}")
     public List<Employee> getEmpDetail(@PathVariable("name") String name){

@@ -1,20 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+  constructor(props){
+      super(props);
+
+      this.state = {
+          data: []
+      };
+  }
+
+  componentDidMount(){
+      fetch("http://localhost:8080/employees").
+          then(response => response.json()).
+          then(findResponse => {
+              this.setState({
+                  data: [findResponse]
+              });
+          })
+  }
+
+
+  render(){
+      return(
+          <div>
+              {
+                  this.state.data.map((dynamicData, Key) => {
+                      let keys = Object.keys(dynamicData);
+                      let d = dynamicData;
+                      return keys.map(data => {
+                          return (
+                              <tr key={Key} style={{borderBottom: '1px solid black'}}>
+                                  <td>{dynamicData[data].title}</td>
+                                  <td>{dynamicData[data].firstName}</td>
+                                  <td>{dynamicData[data].lastName}</td>
+                                  <td>{dynamicData[data].description}</td>
+                              </tr>
+                          );
+                      });
+                  })
+              }
+          </div>
+      );
   }
 }
 
