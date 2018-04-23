@@ -28,4 +28,11 @@ public class EmployeeController {
         return emp.findByFirstName(name);
     }
 
+    @RequestMapping(method=RequestMethod.POST, value="/employee/add")
+    public String save(@RequestBody Employee employee){
+        System.out.println("================ Inside Employee Controller To add Method. ==========================");
+        emp.save(employee);
+        return employee.get_id() + "";
+    }
+
 }

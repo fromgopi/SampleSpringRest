@@ -24,6 +24,14 @@ public class Employee {
         this.description = description;
     }
 
+    public ObjectId get_id() {
+        return _id;
+    }
+
+    public void set_id(ObjectId _id) {
+        this._id = _id;
+    }
+
     public String getTitle() {
         return title;
     }
