@@ -23,3 +23,7 @@ hs_err_pid*
 /.gradle/
 /build/*
 /out/*
+/node_modules/*
+
+.DS_Store
+gradlew.bat
