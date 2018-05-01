@@ -11,4 +11,9 @@ public class ApplicationConfig {
     public Names names(){
         return new Names();
     }
+
+    /*@Bean
+    public MyDaoImpl getDAO() {
+        return new MyDaoImpl();
+    }*/
 }
