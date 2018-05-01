@@ -1,4 +1,4 @@
-package com.example.SimpleSpringBoot.repository;
+package com.example.SimpleSpringBoot.dao;
 
 import com.example.SimpleSpringBoot.beans.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;

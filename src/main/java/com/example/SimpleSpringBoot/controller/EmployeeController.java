@@ -1,7 +1,7 @@
 package com.example.SimpleSpringBoot.controller;
 
 import com.example.SimpleSpringBoot.beans.Employee;
-import com.example.SimpleSpringBoot.repository.EmployeeRepository;
+import com.example.SimpleSpringBoot.dao.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,7 +32,7 @@ public class EmployeeController {
     public String save(@RequestBody Employee employee){
         System.out.println("================ Inside Employee Controller To add Method. ==========================");
         emp.save(employee);
-        return employee.get_id() + "";
+        return employee.getId() + "";
     }
 
 }
