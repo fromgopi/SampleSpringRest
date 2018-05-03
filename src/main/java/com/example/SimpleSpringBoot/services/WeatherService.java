@@ -31,8 +31,6 @@ public class WeatherService {
         JSONObject obj = new JSONObject(weatherJson);
         JSONObject main = obj.getJSONObject("main");
         weatherSo.setTemp(main.get("temp"));
-        weatherSo.setTemp_max(main.get("temp_max"));
-        weatherSo.setTemp_min(main.get("temp_min"));
         return weatherSo;
     }
 }
