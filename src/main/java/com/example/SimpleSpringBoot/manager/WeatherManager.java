@@ -22,6 +22,13 @@ public class WeatherManager {
     @Autowired
     private CityWeatherDaoImpl cityRepository;
 
+    /**
+     * Simple manager function which will accepts city name as parameter and combine weather details and famous places.
+     * @param cityName
+     * @return Weather Business object.
+     * @throws SQLException
+     */
+
     public Weather getDetails(String cityName) throws SQLException {
         Weather wSO = weatherService.getWeatherService(cityName);
         List<Cities> citySO = cityRepository.getCityDetails(cityName);

@@ -14,9 +14,14 @@ public class WeatherService {
     public static final Logger logger = LoggerFactory.getLogger(WeatherService.class);
 
     private String baseURL = "http://api.openweathermap.org/data/2.5/weather?APPID=59ee4271096216bf0f9f3bfb07ef0b59&units=metric&mode=json&q=";
-    //private String baseURL = "http://api.apixu.com/v1/current.json?key=04a9c3fd79944ce4bf243847180105&q=Chennai";
 
     private RestTemplate restTemplate = new RestTemplate();
+
+    /**
+     * Simple Service function which will interact with external API and gets current temperature of the place.
+     * @param cityName
+     * @return weather service Object.
+     */
 
     public Weather getWeatherService(String cityName) {
 
@@ -24,6 +29,13 @@ public class WeatherService {
         Weather weatherSO = extractWeather(weatherJson);
         return weatherSO;
     }
+
+    /**
+     * Simple method which will parse the response and returns the weather details.
+     * @param weatherJson
+     * @return weather service Object
+     * @throws JSONException
+     */
 
     private Weather extractWeather(String weatherJson) throws JSONException {
 

@@ -1,3 +1,6 @@
+/**
+ * @author Muktevigk
+ */
 package com.example.SimpleSpringBoot.dao;
 
 import com.example.SimpleSpringBoot.beans.Cities;
@@ -13,7 +16,14 @@ public class CityWeatherDaoImpl {
 
     @Autowired
     JdbcTemplate jdbcTemplate;
-    
+
+    /**
+     * This method is responsible to interact with relational db and pull the details.
+     * @param cityName
+     * @return List of cities and famous places in and around the given city.
+     * @throws SQLException
+     */
+
     public List<Cities> getCityDetails(String cityName) throws SQLException {
 
         String sql = "SELECT * FROM cities WHERE city= ?";
