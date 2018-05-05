@@ -23,7 +23,7 @@ public class WeatherService {
      * @return weather service Object.
      */
 
-    public Weather getWeatherService(String cityName) {
+    public Weather getWeatherService(String cityName) throws JSONException {
 
         String weatherJson = restTemplate.getForObject(baseURL+cityName, String.class);
         Weather weatherSO = extractWeather(weatherJson);
