@@ -6,5 +6,5 @@ import registerServiceWorker from './registerServiceWorker';
 import TableExample from "./Table";
 import CardView from "./CardView";
 
-ReactDOM.render(<CardView />, document.getElementById('root'));
+ReactDOM.render(<TableExample />, document.getElementById('root'));
 registerServiceWorker();
