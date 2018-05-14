@@ -4,6 +4,7 @@ import com.example.SimpleSpringBoot.beans.Cities;
 import com.example.SimpleSpringBoot.beans.Weather;
 import com.example.SimpleSpringBoot.dao.CityWeatherDaoImpl;
 import com.example.SimpleSpringBoot.services.WeatherService;
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class WeatherManager {
      * @throws SQLException
      */
 
-    public Weather getDetails(String cityName) throws SQLException {
+    public Weather getDetails(String cityName) throws SQLException, JSONException {
         Weather wSO = weatherService.getWeatherService(cityName);
         List<Cities> citySO = cityRepository.getCityDetails(cityName);
 
